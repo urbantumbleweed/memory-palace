@@ -4,7 +4,9 @@
   "description": "React/Node playground to enhance memory",
   "scripts": {
     "start": "webpack-dev-server --open --progress",
-    "build": "webpack"
+    "build": "webpack",
+    "test": "mocha 'src/**/*.spec.js'",
+    "test:watch": "mocha --require @babel/register --recursive --reporter min --watch 'src/**/*.spec.js'"
   },
   "repository": "https://github.com/urbantumbleweed/memory-palace.git",
   "author": "Stephen Saunders",
@@ -25,14 +27,22 @@
     "reset-jss": "^1.0.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.7.5",
     "@babel/core": "^7.7.5",
     "@babel/preset-env": "^7.7.5",
     "@babel/preset-react": "^7.7.4",
+    "@babel/register": "^7.7.4",
     "babel-loader": "^8.0.6",
+    "chai": "^4.2.0",
     "clean-webpack-plugin": "^3.0.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.15.1",
     "eslint": "^6.7.2",
     "eslint-plugin-react": "^7.17.0",
     "html-webpack-plugin": "^3.2.0",
+    "jsdom": "^15.2.1",
+    "mocha": "^6.2.2",
+    "sinon": "^7.5.0",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.9.0"
